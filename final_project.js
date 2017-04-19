@@ -2,11 +2,79 @@ var namespace = "http://www.w3.org/2000/svg"
 
 // Write your code here!
 
+var character = goose1
+
 var road2 = makeRect(0,30,200,40,"black")
 
 var road = makeRect(0,100,200,40,"black")
 
-var goose1 = makeImage("http://vignette2.wikia.nocookie.net/pixelpeople/images/3/38/Duck.png/revision/latest?cb=20130409230957", 0,200,50,50)
+var goose1 = makeImage("http://vignette2.wikia.nocookie.net/pixelpeople/images/3/38/Duck.png/revision/latest?cb=20130409230957", 20,150,30,30)
+
+var truck = makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 20,40,40,40)
+
+var truck2 =  makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 80,90,40,40)
+
+var y = getY(character)
+
+function animation(){
+  
+    
+ 
+  
+  move(truck,1,0)
+  move(truck2,1,0)
+  
+  
+  requestAnimationFrame(animation)
+  
+ var x1 = getX(truck)
+ var x2 = getX(truck2)
+ 
+ 
+ if(x1 > 200){
+   setX(truck,-10)
+   }
+  
+  if(x2 > 200){
+    setX(truck2,-10)
+  }
+  
+}
+
+addEventListener('keydown', move)
+
+
+function move(event) {
+  
+ 
+  
+  if(event.key == "j"){
+move(character,0,-20)
+
+  }
+  
+  
+}
+  
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 // DO NOT EDIT CODE BELOW THIS LINE!
 function getX(shape) {
