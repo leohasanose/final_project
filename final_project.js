@@ -2,6 +2,12 @@ var namespace = "http://www.w3.org/2000/svg"
 
 // Write your code here!
 
+var road2 = makeRect(0,30,200,40,"black")
+
+var road = makeRect(0,100,200,40,"black")
+
+var goose1 = makeImage("http://vignette2.wikia.nocookie.net/pixelpeople/images/3/38/Duck.png/revision/latest?cb=20130409230957", 0,200,50,50)
+
 // DO NOT EDIT CODE BELOW THIS LINE!
 function getX(shape) {
   if (!shape) {
