@@ -2,23 +2,24 @@ var namespace = "http://www.w3.org/2000/svg"
 
 // Write your code here!
 
-var character = goose1
+var lives = 3 
+var livesNumber = makeText(lives, 170, 180, 20, "'Press Start 2P', cursive", "black")
+var livesText = makeText("Lives",150,190, 10,"'Press Start 2P', cursive","black")
 
 var road2 = makeRect(0,30,200,40,"black")
 
 var road = makeRect(0,100,200,40,"black")
 
-var goose1 = makeImage("http://vignette2.wikia.nocookie.net/pixelpeople/images/3/38/Duck.png/revision/latest?cb=20130409230957", 20,150,30,30)
+var goose = makeImage("http://vignette2.wikia.nocookie.net/pixelpeople/images/3/38/Duck.png/revision/latest?cb=20130409230957", 20,150,30,30)
 
 var truck = makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 20,40,40,40)
 
 var truck2 =  makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 80,90,40,40)
 
-var y = getY(character)
+
 
 function animation(){
   
-    
  
   
   move(truck,1,0)
@@ -39,21 +40,72 @@ function animation(){
     setX(truck2,-10)
   }
   
+    
+    if(collides(goose,truck)){
+  
+  setY(goose,150)
+  setX(goose,20)
+  lives = lives-1
+    }
+    
+    
 }
 
-addEventListener('keydown', move)
 
 
-function move(event) {
+addEventListener('keydown', moveGoose)
+
+
+function moveGoose(event){
   
- 
+ var y = getY(goose)
+ var x = getX(goose)
   
-  if(event.key == "j"){
-move(character,0,-20)
+  if(event.key == "w"){
+move(goose, 0, -10)
 
   }
   
-  
+if(event.key == "a"){
+
+move(goose,-10,0)
+
+}
+    
+if(event.key == "d"){
+
+move(goose,10,0)
+
+}
+    
+if(event.key == "s"){
+
+move(goose,0,10)
+
+}
+    
+
+ if(y < 5){
+     setY(goose,5)
+ }
+    
+if(y > 170){
+setY(goose,170)
+}
+    
+if(x <10){
+setX(goose,10)
+}   
+    
+if(x > 175){
+setX(goose,175)
+}
+
+
+
+    
+    
+    
 }
   
 
