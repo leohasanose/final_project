@@ -6,9 +6,18 @@ var lives = 3
 var livesNumber = makeText(lives, 170, 180, 20, "'Press Start 2P', cursive", "black")
 var livesText = makeText("Lives",150,190, 10,"'Press Start 2P', cursive","black")
 
+
 var road2 = makeRect(0,30,200,40,"black")
 
 var road = makeRect(0,100,200,40,"black")
+
+var nest = makeImage("https://img.clipartfox.com/50b65e478be357469a3108eff860fa86_nest-clip-art-at-clker-com-empty-bird-nest-clipart_600-371.png",0,0,40,40)
+
+var nest2 = makeImage("https://img.clipartfox.com/50b65e478be357469a3108eff860fa86_nest-clip-art-at-clker-com-empty-bird-nest-clipart_600-371.png",50,0,40,40)
+
+var nest3 =  makeImage("https://img.clipartfox.com/50b65e478be357469a3108eff860fa86_nest-clip-art-at-clker-com-empty-bird-nest-clipart_600-371.png",100,0,40,40)
+
+
 
 var goose = makeImage("http://vignette2.wikia.nocookie.net/pixelpeople/images/3/38/Duck.png/revision/latest?cb=20130409230957", 20,150,30,30)
 
@@ -46,9 +55,26 @@ function animation(){
   setY(goose,150)
   setX(goose,20)
   lives = lives-1
+   
+    livesNumber.innerHTML =lives
     }
     
+   if(collides(goose,truck2)){
+   
+setY(goose,150)
+  setX(goose,20)
+  lives = lives-1
+  
+  livesNumber.innerHTML =lives
+   } 
+
+    if(lives == 0){
     
+    makeText("GAME OVER",10,100,20,"'Press Start 2P', cursive", "black")
+    
+    }
+
+
 }
 
 
