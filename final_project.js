@@ -6,6 +6,7 @@ var lives = 3
 var livesNumber = makeText(lives, 170, 180, 20, "'Press Start 2P', cursive", "black")
 var livesText = makeText("Lives",150,190, 10,"'Press Start 2P', cursive","black")
 
+var how = "yes"
 
 var road2 = makeRect(0,30,200,40,"black")
 
@@ -17,7 +18,7 @@ var nest2 = makeImage("https://img.clipartfox.com/50b65e478be357469a3108eff860fa
 
 var nest3 =  makeImage("https://img.clipartfox.com/50b65e478be357469a3108eff860fa86_nest-clip-art-at-clker-com-empty-bird-nest-clipart_600-371.png",100,0,40,40)
 
-
+var nest4 =  makeImage("https://img.clipartfox.com/50b65e478be357469a3108eff860fa86_nest-clip-art-at-clker-com-empty-bird-nest-clipart_600-371.png",150,0,40,40)
 
 var goose = makeImage("http://vignette2.wikia.nocookie.net/pixelpeople/images/3/38/Duck.png/revision/latest?cb=20130409230957", 20,150,30,30)
 
@@ -30,9 +31,10 @@ var truck2 =  makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG
 function animation(){
   
  
-  
+  if(how == "yes" && lives > 0){
   move(truck,1,0)
   move(truck2,1,0)
+  }
   
   
   requestAnimationFrame(animation)
@@ -72,9 +74,38 @@ setY(goose,150)
     
     makeText("GAME OVER",10,100,20,"'Press Start 2P', cursive", "black")
     
-    }
+    how = "no"
+     }
 
+    if(collides(goose,nest)){
+   
+makeText("YOU WIN",10,100,20,"'Press Start 2P', cursive", "black")
+    how = "no"
+     } 
 
+    if(collides(goose,nest2)){
+   
+makeText("YOU WIN",10,100,20,"'Press Start 2P', cursive", "black")
+  
+    how = "no"
+    } 
+
+if(collides(goose,nest3)){
+   
+makeText("YOU WIN",10,100,20,"'Press Start 2P', cursive", "black")
+   
+how = "no"
+} 
+    
+    
+if(collides(goose,nest4)){
+   
+makeText("YOU WIN",10,100,20,"'Press Start 2P', cursive", "black")
+ how = "no"  
+} 
+    
+    
+    
 }
 
 
@@ -87,24 +118,24 @@ function moveGoose(event){
  var y = getY(goose)
  var x = getX(goose)
   
-  if(event.key == "w"){
+  if(event.key == "w" && how == "yes"){
 move(goose, 0, -10)
 
   }
   
-if(event.key == "a"){
+if(event.key == "a" && how == "yes"){
 
 move(goose,-10,0)
 
 }
     
-if(event.key == "d"){
+if(event.key == "d" && how == "yes"){
 
 move(goose,10,0)
 
 }
     
-if(event.key == "s"){
+if(event.key == "s" && how =="yes"){
 
 move(goose,0,10)
 
@@ -135,7 +166,10 @@ setX(goose,175)
 }
   
 
+function changeGoose(){
 
+goose = makeImage("http://www.pngmart.com/files/3/Goose-PNG-Photos.png",0)
+}
 
 
   
