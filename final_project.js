@@ -2,6 +2,33 @@ var namespace = "http://www.w3.org/2000/svg"
 
 // Write your code here!
 
+var skin= 1
+
+var goose = 1
+
+function changeGoose(){
+
+if(skin == 1){
+
+    makeRect(20,150,30,30,"green")
+    
+goose = makeImage("http://vignette2.wikia.nocookie.net/pixelpeople/images/3/38/Duck.png/revision/latest?cb=20130409230957", 20,150,30,30)
+
+skin = 2
+
+}else if(skin == 2){
+
+    makeRect(20,150,30,30,"green")
+    
+goose = makeImage("http://www.pngmart.com/files/3/Goose-PNG-Photos.png",20,150,31,31)
+
+skin =1 
+}
+
+}
+
+
+
 var lives = 3 
 var livesNumber = makeText(lives, 170, 180, 20, "'Press Start 2P', cursive", "black")
 var livesText = makeText("Lives",150,190, 10,"'Press Start 2P', cursive","black")
@@ -20,23 +47,50 @@ var nest3 =  makeImage("https://img.clipartfox.com/50b65e478be357469a3108eff860f
 
 var nest4 =  makeImage("https://img.clipartfox.com/50b65e478be357469a3108eff860fa86_nest-clip-art-at-clker-com-empty-bird-nest-clipart_600-371.png",150,0,40,40)
 
-var goose = makeImage("http://vignette2.wikia.nocookie.net/pixelpeople/images/3/38/Duck.png/revision/latest?cb=20130409230957", 20,150,30,30)
+
 
 var truck = makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 20,40,40,40)
 
 var truck2 =  makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 80,90,40,40)
 
-
+var difficulty= 1
 
 function animation(){
   
  
+    
+   if(difficulty == 1){ 
+    
   if(how == "yes" && lives > 0){
   move(truck,1,0)
   move(truck2,1,0)
   }
   
+
+    
+   }else if(difficulty == 2){
+   
+   if(how == "yes" && lives > 0){
+  move(truck,1.5,0)
+  move(truck2,1.5,0)
+  }
   
+
+  
+   }else  if(difficulty == 3){
+   
+   if(how == "yes" && lives > 0){
+  move(truck,2,0)
+  move(truck2,2,0)
+  }
+
+   }
+  
+
+
+
+
+
   requestAnimationFrame(animation)
   
  var x1 = getX(truck)
@@ -50,7 +104,19 @@ function animation(){
   if(x2 > 200){
     setX(truck2,-10)
   }
-  
+   }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     if(collides(goose,truck)){
   
@@ -102,7 +168,7 @@ if(collides(goose,nest4)){
    
 makeText("YOU WIN",10,100,20,"'Press Start 2P', cursive", "black")
  how = "no"  
-} 
+
     
     
     
@@ -166,17 +232,38 @@ setX(goose,175)
 }
   
 
-function changeGoose(){
 
-goose = makeImage("http://www.pngmart.com/files/3/Goose-PNG-Photos.png",0)
+function easy(){
+
+difficulty = 1 
+
+animation()
+
+
+}
+  
+  function normal(){
+  
+      difficulty = 2
+      
+      animation()
+  
+  }
+
+function hardcore(){
+
+difficulty = 3
+
+animation()
 }
 
+function help(){
 
-  
-  
-  
+difficulty = 4
 
+animation()
 
+}
 
 
 
