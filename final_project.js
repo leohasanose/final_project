@@ -10,19 +10,32 @@ function changeGoose(){
 
 if(skin == 1){
 
-    makeRect(20,150,30,30,"green")
+    makeRect(20,150,30,30,"lightgreen")
     
-goose = makeImage("http://vignette2.wikia.nocookie.net/pixelpeople/images/3/38/Duck.png/revision/latest?cb=20130409230957", 20,150,30,30)
+  goose = makeImage("http://vignette2.wikia.nocookie.net/pixelpeople/images/3/38/Duck.png/revision/latest?cb=20130409230957", 20,150,30,30)
 
 skin = 2
 
 }else if(skin == 2){
 
-    makeRect(20,150,30,30,"green")
+    makeRect(20,150,30,30,"lightgreen")
     
-goose = makeImage("http://www.pngmart.com/files/3/Goose-PNG-Photos.png",20,150,31,31)
+ goose = makeImage("http://www.pngmart.com/files/3/Goose-PNG-Photos.png",20,150,31,31)
 
-skin =1 
+skin =3 
+}else if(skin == 3){
+
+makeRect(20,150,30,30,"lightgreen")
+
+goose = makeImage("http://www.pngmart.com/files/3/Goose-PNG-Free-Download.png",20,150,31,31)
+
+skin = 4
+}else if(skin == 4 ){
+
+makeRect(20,150,30,30,"lightgreen")
+
+goose = makeImage("http://www.pngmart.com/files/3/Goose-PNG-Image.png",20,150,31,31)
+skin = 1
 }
 
 }
@@ -39,13 +52,13 @@ var road2 = makeRect(0,30,200,40,"black")
 
 var road = makeRect(0,100,200,40,"black")
 
-var nest = makeImage("https://img.clipartfox.com/50b65e478be357469a3108eff860fa86_nest-clip-art-at-clker-com-empty-bird-nest-clipart_600-371.png",0,0,40,40)
+var nest = makeImage("http://www.pngmart.com/files/3/Nest-PNG-Clipart.png",0,0,40,40)
 
-var nest2 = makeImage("https://img.clipartfox.com/50b65e478be357469a3108eff860fa86_nest-clip-art-at-clker-com-empty-bird-nest-clipart_600-371.png",50,0,40,40)
+var nest2 = makeImage("http://www.pngmart.com/files/3/Nest-PNG-Clipart.png",50,0,40,40)
 
-var nest3 =  makeImage("https://img.clipartfox.com/50b65e478be357469a3108eff860fa86_nest-clip-art-at-clker-com-empty-bird-nest-clipart_600-371.png",100,0,40,40)
+var nest3 =  makeImage("http://www.pngmart.com/files/3/Nest-PNG-Clipart.png",100,0,40,40)
 
-var nest4 =  makeImage("https://img.clipartfox.com/50b65e478be357469a3108eff860fa86_nest-clip-art-at-clker-com-empty-bird-nest-clipart_600-371.png",150,0,40,40)
+var nest4 =  makeImage("http://www.pngmart.com/files/3/Nest-PNG-Clipart.png",150,0,40,40)
 
 
 
@@ -71,8 +84,8 @@ function animation(){
    }else if(difficulty == 2){
    
    if(how == "yes" && lives > 0){
-  move(truck,1.5,0)
-  move(truck2,1.5,0)
+  move(truck,2,0)
+  move(truck2,2,0)
   }
   
 
@@ -80,13 +93,18 @@ function animation(){
    }else  if(difficulty == 3){
    
    if(how == "yes" && lives > 0){
-  move(truck,2,0)
-  move(truck2,2,0)
+  move(truck,3,0)
+  move(truck2,3,0)
   }
 
-   }
+   }else if(difficulty == 4){
+   
+    if(how == "yes" && lives > 0){
+  move(truck,4,0)
+  move(truck2,4,0)
+    }
   
-
+   }
 
 
 
@@ -104,7 +122,7 @@ function animation(){
   if(x2 > 200){
     setX(truck2,-10)
   }
-   }
+   
     
     
     
@@ -169,9 +187,7 @@ if(collides(goose,nest4)){
 makeText("YOU WIN",10,100,20,"'Press Start 2P', cursive", "black")
  how = "no"  
 
-    
-    
-    
+}
 }
 
 

@@ -2,7 +2,7 @@
 
 
 svg {
-  background: green;
+  background: lightgreen;
   display: block;
   margin: auto;
 }
@@ -17,6 +17,5 @@ font-family: 'Press Start 2P', cursive;
 
 body{
 
-    background-color:DarkRed;
-
+  background-color: slategray;
 }
