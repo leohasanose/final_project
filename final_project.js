@@ -66,6 +66,12 @@ var truck = makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16
 
 var truck2 =  makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 80,90,40,40)
 
+var truck3 =  makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 10,100,40,40)
+
+var truck4 = makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 110,30,40,40)
+
+
+
 var difficulty= 1
 
 function animation(){
@@ -77,6 +83,9 @@ function animation(){
   if(how == "yes" && lives > 0){
   move(truck,1,0)
   move(truck2,1,0)
+  move(truck3,2,0)
+  move(truck4,2,0)
+  
   }
   
 
@@ -86,7 +95,10 @@ function animation(){
    if(how == "yes" && lives > 0){
   move(truck,2,0)
   move(truck2,2,0)
-  }
+  move(truck3,3,0)
+  move(truck4,3,0)
+   
+   }
   
 
   
@@ -95,13 +107,19 @@ function animation(){
    if(how == "yes" && lives > 0){
   move(truck,3,0)
   move(truck2,3,0)
-  }
+  move(truck3,2.5,0)
+  move(truck4,2.5,0)
+   
+   }
 
    }else if(difficulty == 4){
    
     if(how == "yes" && lives > 0){
   move(truck,4,0)
   move(truck2,4,0)
+  move(truck3,5,0)
+  move(truck4,5,0)  
+    
     }
   
    }
@@ -113,7 +131,8 @@ function animation(){
   
  var x1 = getX(truck)
  var x2 = getX(truck2)
- 
+ var x3 = getX(truck3)
+ var x4 = getX(truck4)
  
  if(x1 > 200){
    setX(truck,-10)
@@ -123,10 +142,14 @@ function animation(){
     setX(truck2,-10)
   }
    
+    if(x2 > 200){
+    setX(truck3,-10)
+  }
     
     
-    
-    
+    if(x2 > 200){
+    setX(truck4,-10)
+  }
     
     
     
@@ -154,6 +177,26 @@ setY(goose,150)
   livesNumber.innerHTML =lives
    } 
 
+    if(collides(goose,truck3)){
+   
+setY(goose,150)
+  setX(goose,20)
+  lives = lives-1
+  
+  livesNumber.innerHTML =lives
+   } 
+    
+  if(collides(goose,truck4)){
+   
+setY(goose,150)
+  setX(goose,20)
+  lives = lives-1
+  
+  livesNumber.innerHTML =lives
+   }   
+    
+    
+    
     if(lives == 0){
     
     makeText("GAME OVER",10,100,20,"'Press Start 2P', cursive", "black")
