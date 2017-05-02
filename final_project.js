@@ -62,11 +62,11 @@ var nest4 =  makeImage("http://www.pngmart.com/files/3/Nest-PNG-Clipart.png",150
 
 
 
-var truck = makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 20,40,40,40)
+var truck = makeImage("https://rentals.htrucks.com/images/refrigerated-cargo-no-background.png", 20,40,40,40)
 
 var truck2 =  makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 80,90,40,40)
 
-var truck3 =  makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 10,100,40,40)
+var truck3 =  makeImage("https://rentals.htrucks.com/images/refrigerated-cargo-no-background.png", 10,100,40,40)
 
 var truck4 = makeImage("http://pngimg.com/uploads/pickup_truck/pickup_truck_PNG16304.png", 110,30,40,40)
 
