@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+
+svg {
+  background: white;
+  display: block;
+  margin: auto;
+}
+
+h1{
+
+font-family: 'Press Start 2P', cursive;
+
+color: white;
+
+}
+
+body{
+
+  background-color: black;
+}
+
+h2{
+
+font-family: 'Press Start 2P', cursive;
+
+color:white;
+}
