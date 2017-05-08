@@ -3,12 +3,11 @@ var namespace = "http://www.w3.org/2000/svg"
 // Write your code here!
 
 
-makeRect(0,0,10,10,"red")
 
-makeImage("http://clipartbarn.com/wp-content/uploads/2017/02/Rubber-duck-clipart-kid.png",0,0,50,50)
-
+var goose2 = makeImage("http://clipartbarn.com/wp-content/uploads/2017/02/Rubber-duck-clipart-kid.png",0,0,50,350)
 
 
+var bread = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",0,0,10,10)
 
 
 
@@ -159,7 +158,7 @@ function makeEllipse(cx, cy, rx, ry, fill, opacity) {
   ellipse.setAttribute("fill", fill)
   ellipse.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById("canvas2")
   canvas.appendChild(ellipse)
   return ellipse
 }
@@ -174,7 +173,7 @@ function makeLine(x1, y1, x2, y2, stroke, strokeWidth, opacity) {
   line.setAttribute("stroke-width", strokeWidth)
   line.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById("canvas2")
   canvas.appendChild(line)
   return line
 }
@@ -187,7 +186,7 @@ function makePolyline(points, stroke, strokeWidth, opacity) {
   polyline.setAttribute("opacity", opacity)
   polyline.setAttribute("fill", "none")
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById("canvas2")
   canvas.appendChild(polyline)
   return polyline
 }
@@ -198,7 +197,7 @@ function makePolygon(points, fill, opacity) {
   polygon.setAttribute("opacity", opacity)
   polygon.setAttribute("fill", fill)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById("canvas2")
   canvas.appendChild(polygon)
   return polygon
 }
@@ -213,7 +212,7 @@ function makeText(message, x, y, fontSize, fontFamily, fill, opacity) {
   text.setAttribute("fill", fill)
   text.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById("canvas2")
   canvas.appendChild(text)
   return text
 }
@@ -227,7 +226,7 @@ function makeImage(url, x, y, width, height, opacity) {
   image.setAttribute("height", height)
   image.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById("canvas2")
   canvas.appendChild(image)
   return image
 }
