@@ -2,22 +2,78 @@ var namespace = "http://www.w3.org/2000/svg"
 
 // Write your code here!
 
+var goose2 = makeImage("http://clipartbarn.com/wp-content/uploads/2017/02/Rubber-duck-clipart-kid.png",0,150,50,50)
+
+var lives = 3 
+var livesNumber = makeText(lives,180, 190, 15, "'Press Start 2P', cursive", "black")
+var livesText = makeText("Lives",170,200, 5,"'Press Start 2P', cursive","black")
 
 
-var goose2 = makeImage("http://clipartbarn.com/wp-content/uploads/2017/02/Rubber-duck-clipart-kid.png",0,0,50,350)
-
-
-var bread = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",0,0,10,10)
-
-
-
-
-
-
+var score = 0
+var scoreNumber = makeText(score, 150, 190, 15, "'Press Start 2P', cursive", "black")
+var scoreText = makeText("Score",140,200, 5,"'Press Start 2P', cursive","black")
 
 
 
 
+var bread = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",0,0,30,30)
+
+var bread2 = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",50,0,30,30)
+
+var bread3 = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",110,0,30,30)
+
+var bread4 = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",170,0,30,30)
+
+
+addEventListener('keydown', slide)
+
+
+function slide(event){
+  
+ var x = getX(goose2)
+  
+  
+  
+if(event.key == "a"){
+
+move(goose2,-10,0)
+
+}
+    
+if(event.key == "d"){
+
+move(goose2,10,0)
+
+}
+    
+if(x <0){
+setX(goose2,10)
+}   
+    
+if(x > 175){
+setX(goose2,175)
+}
+
+    
+}
+  
+
+function breadAttacc(){
+
+
+    if(lives > 0){
+  move(bread,0,1)
+  move(bread2,0,1)
+  move(bread3,0,1)
+  move(bread4,0,1)
+  
+    
+    }
+
+
+requestAnimationFrame(breadAttacc)
+
+}
 
 
 
