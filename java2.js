@@ -10,19 +10,19 @@ var livesText = makeText("Lives",170,200, 5,"'Press Start 2P', cursive","black")
 
 
 var score = 0
-var scoreNumber = makeText(score, 150, 190, 15, "'Press Start 2P', cursive", "black")
-var scoreText = makeText("Score",140,200, 5,"'Press Start 2P', cursive","black")
+var scoreNumber = makeText(score, 15, 190, 15, "'Press Start 2P', cursive", "black")
+var scoreText = makeText("Score",14,200, 5,"'Press Start 2P', cursive","black")
 
 
 
 
-var bread = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",0,0,30,30)
+var bread = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",0,-250,30,30)
 
 var bread2 = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",50,0,30,30)
 
-var bread3 = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",110,0,30,30)
+var bread3 = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",110,-400,30,30)
 
-var bread4 = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",170,0,30,30)
+var bread4 = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",170,-160,30,30)
 
 
 addEventListener('keydown', slide)
@@ -60,19 +60,98 @@ setX(goose2,175)
 
 function breadAttacc(){
 
+    var b = getY(bread)
+    var b2 = getY(bread2)
+    var b3 = getY(bread3)
+    var b4 = getY(bread4)
+    
 
     if(lives > 0){
-  move(bread,0,1)
-  move(bread2,0,1)
-  move(bread3,0,1)
-  move(bread4,0,1)
+        
+  move(bread,0,0.2)
+  move(bread2,0,0.5)
+  move(bread3,0,0.5)
+  move(bread4,0,0.2)
   
+
+   
+    }
+
     
+
+        
+    if(b > 200){
+   
+        setY(bread,-250)
+        lives = lives-1
+ livesNumber.innerHTML =lives
+    }
+    
+     if(b2 > 200){
+    setY(bread2,0)
+   lives = lives-1
+ livesNumber.innerHTML =lives
+    }
+    
+     if(b3 > 200){
+    setY(bread3,-400)
+    lives = lives-1
+ livesNumber.innerHTML =lives
+    }
+    
+     if(b4 > 200){
+    setY(bread4,-160)
+    lives = lives-1
+ livesNumber.innerHTML =lives
+    }
+    
+     
+    if(lives < 1){
+    
+    makeText("GAME OVER",10,100,20,"'Press Start 2P', cursive", "black")
+    makeText("final score:",30,110,10,"'Press Start 2P', cursive", "black")
+    makeText(score,150,110,10,"'Press Start 2P', cursive", "black")
     }
 
 
-requestAnimationFrame(breadAttacc)
+   if(collides(goose2,bread)){
+  
+  score = score+1
+   setY(bread,-250)
+    scoreNumber.innerHTML =score
+    }
+    
+   if(collides(goose2,bread2)){
+   
+      setY(bread2,0) 
+       
+score = score+1
+  
+  scoreNumber.innerHTML =score
+   } 
 
+    if(collides(goose2,bread3)){
+     
+      score = score+1  
+        setY(bread3,-400)
+  scoreNumber.innerHTML =score
+   } 
+    
+  if(collides(goose2,bread4)){
+   
+score = score+1
+  setY(bread4,-160)
+  scoreNumber.innerHTML =score
+   }   
+
+ 
+    
+   
+    requestAnimationFrame(breadAttacc)
+
+
+   
+    
 }
 
 
