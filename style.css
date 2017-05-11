@@ -10,17 +10,28 @@ svg {
 h1{
 
 font-family: 'Press Start 2P', cursive;
-
+color: white;
 
 
 }
 
 body{
 
-  background-color: slategray;
+  background-color: black;
 }
 
 h2{
 
 font-family: 'Press Start 2P', cursive;
+color:white;
+
+}
+
+p{
+
+color:white;
+}
+
+h4{
+color:white;
 }

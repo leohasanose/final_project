@@ -2,7 +2,7 @@
 
 
 svg {
-  background: white;
+  background: MidnightBlue;
   display: block;
   margin: auto;
 }
@@ -25,4 +25,8 @@ h2{
 font-family: 'Press Start 2P', cursive;
 
 color:white;
+}
+
+p{
+color:white
 }

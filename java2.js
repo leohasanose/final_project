@@ -68,10 +68,10 @@ function breadAttacc(){
 
     if(lives > 0){
         
-  move(bread,0,0.2)
+  move(bread,0,0.5)
   move(bread2,0,0.5)
   move(bread3,0,0.5)
-  move(bread4,0,0.2)
+  move(bread4,0,0.5)
   
 
    
