@@ -5,15 +5,15 @@ var namespace = "http://www.w3.org/2000/svg"
 var goose2 = makeImage("http://clipartbarn.com/wp-content/uploads/2017/02/Rubber-duck-clipart-kid.png",0,150,50,50)
 
 var lives = 3 
-var livesNumber = makeText(lives,180, 190, 15, "'Press Start 2P', cursive", "black")
-var livesText = makeText("Lives",170,200, 5,"'Press Start 2P', cursive","black")
+var livesNumber = makeText(lives,180, 190, 15, "'Press Start 2P', cursive", "white")
+var livesText = makeText("Lives",170,200, 5,"'Press Start 2P', cursive","white")
 
 
 var score = 0
-var scoreNumber = makeText(score, 15, 190, 15, "'Press Start 2P', cursive", "black")
-var scoreText = makeText("Score",14,200, 5,"'Press Start 2P', cursive","black")
+var scoreNumber = makeText(score, 15, 190, 15, "'Press Start 2P', cursive", "white")
+var scoreText = makeText("Score",14,200, 5,"'Press Start 2P', cursive","white")
 
-
+var whom = 1
 
 
 var bread = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",0,-250,30,30)
@@ -34,13 +34,13 @@ function slide(event){
   
   
   
-if(event.key == "a"){
+if(event.key == "a" && whom == 2){
 
 move(goose2,-10,0)
 
 }
     
-if(event.key == "d"){
+if(event.key == "d" && whom == 2){
 
 move(goose2,10,0)
 
@@ -60,6 +60,8 @@ setX(goose2,175)
 
 function breadAttacc(){
 
+    whom = 2
+    
     var b = getY(bread)
     var b2 = getY(bread2)
     var b3 = getY(bread3)
@@ -68,9 +70,9 @@ function breadAttacc(){
 
     if(lives > 0){
         
-  move(bread,0,0.5)
-  move(bread2,0,0.5)
-  move(bread3,0,0.5)
+  move(bread,0,0.9)
+  move(bread2,0,0.2)
+  move(bread3,0,0.7)
   move(bread4,0,0.5)
   
 
@@ -108,6 +110,8 @@ function breadAttacc(){
      
     if(lives < 1){
     
+       whom = 1 
+        
     makeText("GAME OVER",10,100,20,"'Press Start 2P', cursive", "black")
     makeText("final score:",30,110,10,"'Press Start 2P', cursive", "black")
     makeText(score,150,110,10,"'Press Start 2P', cursive", "black")
