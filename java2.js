@@ -13,7 +13,7 @@ var score = 0
 var scoreNumber = makeText(score, 15, 190, 15, "'Press Start 2P', cursive", "white")
 var scoreText = makeText("Score",14,200, 5,"'Press Start 2P', cursive","white")
 
-var whom = 1
+var whom = 2
 
 
 var bread = makeImage("http://www.pngmart.com/files/3/Bread-PNG-Transparent-Image.png",0,-250,30,30)
@@ -60,7 +60,7 @@ setX(goose2,175)
 
 function breadAttacc(){
 
-    whom = 2
+    
     
     var b = getY(bread)
     var b2 = getY(bread2)
@@ -68,7 +68,7 @@ function breadAttacc(){
     var b4 = getY(bread4)
     
 
-    if(lives > 0){
+    if(lives > 0 && whom == 2){
         
   move(bread,0,0.9)
   move(bread2,0,0.2)
@@ -157,6 +157,23 @@ score = score+1
    
     
 }
+
+
+function pause(){
+
+if(whom == 2){
+whom = 1
+}else if(whom == 1){
+whom = 2
+}
+
+
+
+
+
+}
+
+
 
 
 
