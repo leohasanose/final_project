@@ -62,6 +62,7 @@ function breadAttacc(){
 
     
     
+    
     var b = getY(bread)
     var b2 = getY(bread2)
     var b3 = getY(bread3)
@@ -167,13 +168,7 @@ whom = 1
 whom = 2
 }
 
-
-
-
-
 }
-
-
 
 
 
